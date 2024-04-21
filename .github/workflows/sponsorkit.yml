@@ -26,6 +26,9 @@ jobs:
           SPONSORKIT_AFDIAN_USER_ID: ${{ secrets.SPONSORKIT_AFDIAN_USER_ID }}
           SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
 
+      - name: Copy sponsors
+        run: ls -a && cp -r sponsorkit/* .
+
       - name: Commit
         uses: EndBug/add-and-commit@v4
         with:
