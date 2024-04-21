@@ -23,11 +23,13 @@ jobs:
       - name: Update sponsors
         run: npm run build
         env:
+          SPONSORKIT_OPENCOLLECTIVE_ID: ${{ secrets.SPONSORKIT_OPENCOLLECTIVE_ID }}
+          SPONSORKIT_OPENCOLLECTIVE_KEY: ${{ secrets.SPONSORKIT_OPENCOLLECTIVE_KEY }}
           SPONSORKIT_AFDIAN_USER_ID: ${{ secrets.SPONSORKIT_AFDIAN_USER_ID }}
           SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
 
       - name: Copy sponsors
-        run: ls -a && cp -r sponsorkit/* .
+        run: cp -r sponsorkit/* .
 
       - name: Commit
         uses: EndBug/add-and-commit@v4
