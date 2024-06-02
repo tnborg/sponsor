@@ -1,35 +1,35 @@
-import { defineConfig, presets } from 'sponsorkit'
+import { defineConfig, tierPresets } from 'sponsorkit'
 
 export default defineConfig({
   tiers: [
     {
       title: '历史赞助商及支持者',
       monthlyDollars: -1,
-      preset: presets.xs,
+      preset: tierPresets.xs,
     },
     {
       title: '支持者',
-      preset: presets.small,
+      preset: tierPresets.small,
     },
     {
       title: '铜牌赞助商',
       monthlyDollars: 3,
-      preset: presets.base,
+      preset: tierPresets.base,
     },
     {
       title: '银牌赞助商',
       monthlyDollars: 7,
-      preset: presets.medium,
+      preset: tierPresets.medium,
     },
     {
       title: '金牌赞助商',
       monthlyDollars: 15,
-      preset: presets.large,
+      preset: tierPresets.large,
     },
     {
       title: '铂金赞助商',
       monthlyDollars: 30,
-      preset: presets.xl,
+      preset: tierPresets.xl,
     },
   ],
 })
