@@ -13,15 +13,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set node
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 20
 
-      - run: corepack enable && pnpm i
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: latest
+          run_install: true
 
       - name: Update sponsors
-        run: npm run build
+        run: pnpm run build
         env:
           SPONSORKIT_OPENCOLLECTIVE_SLUG: "tnb"
           SPONSORKIT_OPENCOLLECTIVE_KEY: ${{ secrets.SPONSORKIT_OPENCOLLECTIVE_KEY }}
@@ -33,7 +37,7 @@ jobs:
         run: cp -r sponsorkit/* .
 
       - name: Commit
-        uses: EndBug/add-and-commit@v4
+        uses: EndBug/add-and-commit@v5
         with:
           message: "chore: update sponsors.svg"
           add: "sponsors.*"
