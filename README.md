@@ -5,8 +5,8 @@
 感谢以下支持者/赞助商的支持：
 
 <p align="center">
-  <a target="_blank" href="https://afdian.com/a/TheTNB">
-    <img alt="sponsors" src="https://github.com/TheTNB/sponsor/blob/main/sponsors.svg?raw=true">
+  <a target="_blank" href="https://afdian.com/a/tnborg">
+    <img alt="sponsors" src="https://github.com/tnborg/sponsor/blob/main/sponsors.svg?raw=true">
   </a>
 </p>
 
